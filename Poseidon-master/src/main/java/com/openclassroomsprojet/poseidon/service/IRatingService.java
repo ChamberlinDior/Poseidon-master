@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 public interface IRatingService {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Gives access to the JPA CRUD methods on the Rating entity
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Repository

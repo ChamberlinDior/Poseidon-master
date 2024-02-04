@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * This class contains methods that allow performing CRUD actions by calling the user repository
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Service

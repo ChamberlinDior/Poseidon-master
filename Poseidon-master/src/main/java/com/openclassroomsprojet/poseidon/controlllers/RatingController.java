@@ -16,7 +16,7 @@ import java.util.Optional;
 /**
  * This controller provides CRUD operations on Rating entity
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 

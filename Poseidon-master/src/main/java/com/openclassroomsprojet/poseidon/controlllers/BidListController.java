@@ -14,9 +14,9 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 /**
- * This controller provides CRUD operations on BidList entity
+ * Ce contrôleur fournit des opérations CRUD sur l'entité BidList
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior ebaley
  * @version 1.0
  */
 @Controller
@@ -25,22 +25,25 @@ public class BidListController {
     @Autowired
     private IBidListService bidListService;
 
+
     /**
-     * This method allows to display all the bids
+     * Cette méthode permet d'afficher tous les bids
      *
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param model Un objet qui contient les données à rendre dans la vue
+     * @return Une chaîne de caractères correspondant au chemin de la vue demandée
      */
     @RequestMapping("/bidList/list")
     public String home(Model model) {
+        // On ajoute à l'objet model la liste de tous les bids obtenus par le service
         model.addAttribute("bidList", bidListService.findAllBidList());
         return "bidList/list";
     }
 
+
     /**
-     * This method allows access to the form for creating a new bid
+     * Cette méthode permet d'accéder au formulaire pour créer un nouveau bid
      *
-     * @return A string path of the requested view
+     * @return Une chaîne de caractères correspondant au chemin de la vue demandée
      */
     @GetMapping("/bidList/add")
     public String addBidForm(BidList bidList) {
@@ -48,12 +51,12 @@ public class BidListController {
     }
 
     /**
-     * This method check the @Valid object and saves it if there is no error
+     * Cette méthode vérifie l'objet @Valid et le sauvegarde s'il n'y a pas d'erreur
      *
-     * @param bidList       Object that must be validated before being saved
-     * @param bindingResult Contains the result of the @Valid object validation, we can check if errors have occurred
-     * @param model         An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param bidList       Objet qui doit être validé avant d'être sauvegardé
+     * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier s'il y a des erreurs
+     * @param model         Un objet qui contient les données à rendre dans la vue
+     * @return Une chaîne de caractères correspondant au chemin de la vue demandée
      */
     @PostMapping("/bidList/validate")
     public String validate(@Valid BidList bidList, BindingResult bindingResult, Model model) {
@@ -65,11 +68,11 @@ public class BidListController {
     }
 
     /**
-     * This method allows access to the form for update an existing bid
+     * Cette méthode permet d'accéder au formulaire pour modifier un bid existant
      *
-     * @param id    The identifier of the object to display
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param id    L'identifiant de l'objet à afficher
+     * @param model Un objet qui contient les données à rendre dans la vue
+     * @return Une chaîne de caractères correspondant au chemin de la vue demandée
      */
     @GetMapping("/bidList/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
@@ -84,13 +87,13 @@ public class BidListController {
     }
 
     /**
-     * This method check the @Valid object and update it if there is no error
+     * Cette méthode vérifie l'objet @Valid et le met à jour s'il n'y a pas d'erreur
      *
-     * @param id            The identifier of the object to check and update
-     * @param bidList       Object that must be checked before being updated
-     * @param bindingResult Contains the result of the @Valid object validation, we can check if errors have occurred
-     * @param model         An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param id            L'identifiant de l'objet à vérifier et à mettre à jour
+     * @param bidList       Objet qui doit être vérifié avant d'être mis à jour
+     * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier s'il y a des erreurs
+     * @param model         Un objet qui contient les données à rendre dans la vue
+     * @return Une chaîne de caractères correspondant au chemin de la vue demandée
      */
     @PostMapping("/bidList/update/{id}")
     public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList, BindingResult bindingResult, Model model) {
@@ -99,24 +102,28 @@ public class BidListController {
             return "redirect:/bidList/list";
         }
         bidList.setBidListId(id);
+        // On retourne le nom de la vue qui affiche le formulaire de modification d'un bid
         return "bidList/update";
     }
 
     /**
-     * This method allows to delete an existing bid
+     * Cette méthode permet de supprimer un bid existant
      *
-     * @param id    The identifier of the object to delete
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the view to which the user is redirected
+     * @param id    L'identifiant de l'objet à supprimer
+     * @param model Un objet qui contient les données à rendre dans la vue
+     * @return Une chaîne de caractères correspondant au chemin de la vue vers laquelle l'utilisateur est redirigé
      */
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         Optional<BidList> bidList = bidListService.findBidListById(id);
+
         if (bidList.isPresent()) {
+
             bidListService.deleteBidListById(id);
         } else {
             throw new IllegalArgumentException("BidList id not found(id=" + id + ")");
         }
+
         return "redirect:/bidList/list";
     }
 }

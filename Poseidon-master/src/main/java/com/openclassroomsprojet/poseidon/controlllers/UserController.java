@@ -16,7 +16,7 @@ import java.util.Optional;
 /**
  * This controller provides CRUD operations on user entity
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Controller

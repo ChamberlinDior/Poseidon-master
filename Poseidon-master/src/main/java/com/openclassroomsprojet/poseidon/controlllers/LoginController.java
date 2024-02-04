@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Controller

@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * JPA persistent entity. Corresponds to the mysql curve_point table
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Entity

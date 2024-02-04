@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * JPA persistent entity. Corresponds to the mysql rule_name table
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Entity

@@ -11,7 +11,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * This class validate candidate username by checking in the database if it already exists
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Slf4j

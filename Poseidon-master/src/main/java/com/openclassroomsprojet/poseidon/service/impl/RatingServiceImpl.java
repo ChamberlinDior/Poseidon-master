@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * This class contains methods that allow performing CRUD actions by calling the rating repository
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Slf4j

@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * This class allows you to Monitors the requests made on the application controllers
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Slf4j

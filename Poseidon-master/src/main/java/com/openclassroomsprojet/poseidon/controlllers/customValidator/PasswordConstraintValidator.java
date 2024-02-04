@@ -10,7 +10,7 @@ import org.passay.*;
 /**
  * This class validate candidate passwords against a configurable rule set. Use Passay library
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 public class PasswordConstraintValidator implements ConstraintValidator<ValidPassword, String> {

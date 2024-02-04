@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Gives access to  the JPA CRUD methods on the BidList entity
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 @Repository

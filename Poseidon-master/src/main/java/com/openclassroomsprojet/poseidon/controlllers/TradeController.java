@@ -16,7 +16,7 @@ import java.util.Optional;
 /**
  * This controller provides CRUD operations on Trade entity
  *
- * @author jonathan GOUVEIA
+ * @author chamberlin dior
  * @version 1.0
  */
 
