@@ -32,7 +32,7 @@ to implement an API using good development practices.
 
 1. Clone this repo
    ```shell
-   git clone https://github.com/G-jonathan/Poseidon.git
+   git clone https://github.com/ChamberlinDior/Poseidon-master.git
 
 2. Package the application
    ```shell
