@@ -10,20 +10,20 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Interface for custom validation rules
- *
+ * Interface pour les règles de validation personnalisées
  * @author chamberlin dior
  * @version 1.0
  */
-@Documented
-@Constraint(validatedBy = PasswordConstraintValidator.class)
-@Target({FIELD, ANNOTATION_TYPE})
-@Retention(RUNTIME)
-public @interface ValidPassword {
+@Documented // Indiquer que cette annotation doit être documentée par javadoc
+@Constraint(validatedBy = PasswordConstraintValidator.class) // Indiquer que cette annotation est une contrainte validée par la
+// classe PasswordConstraintValidator
+@Target({FIELD, ANNOTATION_TYPE}) // Indiquer que cette annotation peut être appliquée sur un champ ou une autre annotation
+@Retention(RUNTIME) // Indiquer que cette annotation doit être conservée à l'exécution
+public @interface ValidPassword { // Déclarer une annotation publique nommée ValidPassword
 
-    String message() default "Invalid Password";
+    String message() default "Invalid Password"; // Définir l'attribut message avec une valeur par défaut "Invalid Password"
 
-    Class<?>[] groups() default {};
+    Class<?>[] groups() default {}; // Définir l'attribut groups avec une valeur par défaut vide
 
-    Class<? extends Payload>[] payload() default {};
+    Class<? extends Payload>[] payload() default {}; // Définir l'attribut payload avec une valeur par défaut vide
 }

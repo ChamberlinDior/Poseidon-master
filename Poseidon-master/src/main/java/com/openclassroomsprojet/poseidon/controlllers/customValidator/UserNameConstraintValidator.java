@@ -8,34 +8,36 @@ import org.springframework.stereotype.Component;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+
 /**
- * This class validate candidate username by checking in the database if it already exists
+ * Cette classe valide le nom d'utilisateur candidat en vérifiant dans la base de données s'il existe déjà
+ * (This class validate candidate username by checking in the database if it already exists)
  *
  * @author chamberlin dior
  * @version 1.0
  */
-@Slf4j
-@Component
+@Slf4j // Utiliser l'annotation Slf4j pour créer un logger
+@Component // Indiquer que cette classe est un composant géré par Spring
 public class UserNameConstraintValidator implements ConstraintValidator<ValidUserName, String> {
 
-    @Autowired
-    private UserRepository userRepository;
+    @Autowired // Injecter les dépendances automatiquement
+    private UserRepository userRepository; // Déclarer le dépôt d'utilisateurs
 
     /**
-     * This method contain a user repository call to check if the username already exists or not
-     *
-     * @param username The string to check
-     * @param context Provides contextual data and operation when applying a given constraint validator
-     * @return The answer to the validation test
+     * Cette méthode contient un appel au dépôt d'utilisateurs pour vérifier si le nom d'utilisateur existe déjà ou non
+     * @param username La chaîne à vérifier
+     * @param context Fournit des données contextuelles et des opérations lors de l'application d'un
+     *validateur de contrainte donné
+     * @return La réponse au test de validation
      */
-    @Override
+    @Override // Redéfinir la méthode de l'interface
     public boolean isValid(String username, ConstraintValidatorContext context) {
-        User user = userRepository.findUserByUsername(username);
-        if (user == null) {
-            log.info("UserNameConstraintValidator: Username is free");
-            return true;
+        User user = userRepository.findUserByUsername(username); // Chercher un utilisateur par son nom d'utilisateur
+        if (user == null) { // Si aucun utilisateur n'est trouvé
+            log.info("UserNameConstraintValidator: Username is free"); // Afficher un message d'information
+            return true; // Renvoyer vrai
         }
-        log.info("UserNameConstraintValidator: Username is already use");
-        return false;
+        log.info("UserNameConstraintValidator: Username is already use"); // Afficher un message d'information
+        return false; // Renvoyer faux
     }
 }

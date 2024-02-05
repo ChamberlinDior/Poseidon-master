@@ -20,18 +20,19 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
     }
 
     /**
-     * Allows to configure the rules and to build, if necessary, an error message
-     * LengthRule({min}, {max}): range of character
-     * CharacterRule(EnglishCharacterData.UpperCase, {number}): minimum number of upper-case character
-     * CharacterRule(EnglishCharacterData.LowerCase, {number}): minimum number of lower-case character
-     * CharacterRule(EnglishCharacterData.Digit, {number}): minimum number of digit character
-     * CharacterRule(EnglishCharacterData.Special, {number}): minimum number of special character
-     * WhitespaceRule(): no whitespace
+     * Permet de configurer les règles et de construire, si nécessaire, un message d'erreur
+     * LengthRule({min}, {max}): plage de caractères
+     * CharacterRule(EnglishCharacterData.UpperCase, {number}): nombre minimum de caractères majuscules
+     * CharacterRule(EnglishCharacterData.LowerCase, {number}): nombre minimum de caractères minuscules
+     * CharacterRule(EnglishCharacterData.Digit, {number}): nombre minimum de caractères numériques
+     * CharacterRule(EnglishCharacterData.Special, {number}): nombre minimum de caractères spéciaux
+     * WhitespaceRule(): pas d'espace
      *
-     * @param password The string to check
-     * @param context  Provides contextual data and operation when applying a given constraint validator
-     * @return boolean. The answer to the validation test
+     * @param password La chaîne à vérifier
+     * @param context Fournit des données contextuelles et des opérations lors de l'application d'un validateur de contrainte donné
+     * @return boolean. La réponse au test de validation
      */
+
     @Override // Redéfinir la méthode de l'interface
     public boolean isValid(String password, ConstraintValidatorContext context) {
         PasswordValidator validator = new PasswordValidator(Arrays.asList(

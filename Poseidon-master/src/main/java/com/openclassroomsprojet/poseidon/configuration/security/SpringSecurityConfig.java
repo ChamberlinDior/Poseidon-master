@@ -15,8 +15,6 @@ import javax.sql.DataSource;
 
 /**
  * Cette classe permet de configurer et d'initialiser Spring Security
- * (This class allows you to set up and configure spring security)
- *
  * @author chamberlin dior
  * @version 1.0
  */
