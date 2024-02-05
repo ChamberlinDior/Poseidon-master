@@ -14,7 +14,8 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 /**
- * This controller provides CRUD operations on Trade entity
+ * Ce contrôleur fournit les opérations CRUD sur l'entité Trade
+ * This controller provides CRUD operations on the Trade entity
  *
  * @author chamberlin dior
  * @version 1.0
@@ -27,10 +28,13 @@ public class TradeController {
     private ITradeService tradeService;
 
     /**
-     * This method allows to display all the trades
+     * Cette méthode permet d'afficher tous les trades
+     * This method allows displaying all the trades
      *
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param model Un objet contenant les données à rendre dans la vue
+     *              An object that contains the data for rendering into the view
+     * @return Un chemin de chaîne de la vue demandée
+     *         A string path of the requested view
      */
     @RequestMapping("/trade/list")
     public String home(Model model) {
@@ -39,9 +43,11 @@ public class TradeController {
     }
 
     /**
+     * Cette méthode permet d'accéder au formulaire de création d'un nouveau trade
      * This method allows access to the form for creating a new trade
      *
-     * @return A string path of the requested view
+     * @return Un chemin de chaîne de la vue demandée
+     *         A string path of the requested view
      */
     @GetMapping("/trade/add")
     public String addUser(Trade trade) {
@@ -49,12 +55,17 @@ public class TradeController {
     }
 
     /**
-     * This method check the @Valid object and saves it if there is no error
+     * Cette méthode vérifie l'objet @Valid et le sauvegarde s'il n'y a pas d'erreur
+     * This method checks the @Valid object and saves it if there is no error
      *
-     * @param trade         Object that must be validated before being saved
-     * @param bindingResult Contains the result of the @Valid object validation, we can check if errors have occurred
-     * @param model         An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param trade         Objet qui doit être validé avant d'être enregistré
+     *                      Object that must be validated before being saved
+     * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier s'il y a des erreurs
+     *                      Contains the result of the @Valid object validation, we can check if errors have occurred
+     * @param model         Un objet contenant les données à rendre dans la vue
+     *                      An object that contains the data for rendering into the view
+     * @return Un chemin de chaîne de la vue demandée
+     *         A string path of the requested view
      */
     @PostMapping("/trade/validate")
     public String validate(@Valid Trade trade, BindingResult bindingResult, Model model) {
@@ -66,11 +77,15 @@ public class TradeController {
     }
 
     /**
-     * This method allows access to the form for update an existing trade
+     * Cette méthode permet d'accéder au formulaire de mise à jour d'un trade existant
+     * This method allows access to the form for updating an existing trade
      *
-     * @param id    The identifier of the object to display
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param id    L'identifiant de l'objet à afficher
+     *              The identifier of the object to display
+     * @param model Un objet contenant les données à rendre dans la vue
+     *              An object that contains the data for rendering into the view
+     * @return Un chemin de chaîne de la vue demandée
+     *         A string path of the requested view
      */
     @GetMapping("/trade/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
@@ -80,13 +95,19 @@ public class TradeController {
     }
 
     /**
-     * This method check the @Valid object and update it if there is no error
+     * Cette méthode vérifie l'objet @Valid et le met à jour s'il n'y a pas d'erreur
+     * This method checks the @Valid object and updates it if there is no error
      *
-     * @param id            The identifier of the object to check and update
-     * @param trade         Object that must be checked before being updated
-     * @param bindingResult Contains the result of the @Valid object validation, we can check if errors have occurred
-     * @param model         An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * @param id            L'identifiant de l'objet à vérifier et à mettre à jour
+     *                      The identifier of the object to check and update
+     * @param trade         Objet qui doit être vérifié avant d'être mis à jour
+     *                      Object that must be checked before being updated
+     * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier s'il y a des erreurs
+     *                      Contains the result of the @Valid object validation, we can check if errors have occurred
+     * @param model         Un objet contenant les données à rendre dans la vue
+     *                      An object that contains the data for rendering into the view
+     * @return Un chemin de chaîne de la vue demandée
+     *         A string path of the requested view
      */
     @PostMapping("/trade/update/{id}")
     public String updateTrade(@PathVariable("id") Integer id, @Valid Trade trade, BindingResult bindingResult, Model model) {
@@ -99,11 +120,15 @@ public class TradeController {
     }
 
     /**
-     * This method allows to delete an existing trade
+     * Cette méthode permet de supprimer un trade existant
+     * This method allows deleting an existing trade
      *
-     * @param id    The identifier of the object to delete
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the view to which the user is redirected
+     * @param id    L'identifiant de l'objet à supprimer
+     *              The identifier of the object to delete
+     * @param model Un objet contenant les données à rendre dans la vue
+     *              An object that contains the data for rendering into the view
+     * @return Un chemin de chaîne de la vue vers laquelle l'utilisateur est redirigé
+     *         A string path of the view to which the user is redirected
      */
     @GetMapping("/trade/delete/{id}")
     public String deleteTrade(@PathVariable("id") Integer id, Model model) {
