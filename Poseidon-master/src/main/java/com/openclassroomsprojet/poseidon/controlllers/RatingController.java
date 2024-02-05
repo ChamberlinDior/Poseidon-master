@@ -14,8 +14,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 /**
- * This controller provides CRUD operations on Rating entity
- *
+ * Ce contrôleur fournit les opérations CRUD sur l'entité Rating
  * @author chamberlin dior
  * @version 1.0
  */
@@ -26,22 +25,25 @@ public class RatingController {
     @Autowired
     private IRatingService ratingService;
 
+
     /**
-     * This method allows to display all the ratings
-     *
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * Cette méthode permet d'afficher tous les ratings
+     * @param model Un objet qui contient les données pour le rendu dans la vue
+     * @return Un chemin de chaîne de la vue demandée
      */
     @RequestMapping("/rating/list")
     public String home(Model model) {
+       // Ajouter la liste des ratings au modèle
         model.addAttribute("rating", ratingService.findAllRating());
-        return "rating/list";
+        return "rating/list";// Renvoyer le nom de la vue "rating/list"
     }
 
     /**
-     * This method allows access to the form for creating a new rating
+     * Cette méthode permet d'accéder au formulaire pour créer un nouveau rating
+     * (This method allows access to the form for creating a new rating)
      *
-     * @return A string path of the requested view
+     * @return Un chemin de chaîne de la vue demandée
+     * (A string path of the requested view)
      */
     @GetMapping("/rating/add")
     public String addRatingForm(Rating rating) {
@@ -49,12 +51,11 @@ public class RatingController {
     }
 
     /**
-     * This method check the @Valid object and saves it if there is no error
-     *
-     * @param rating        Object that must be validated before being saved
-     * @param bindingResult Contains the result of the @Valid object validation, we can check if errors have occurred
-     * @param model         An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * Cette méthode vérifie l'objet @Valid et le sauvegarde s'il n'y a pas d'erreur
+     * @param rating        Objet qui doit être validé avant d'être sauvegardé
+     * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier si des erreurs sont survenues
+     * @param model         Un objet qui contient les données pour le rendu dans la vue
+     * @return Un chemin de chaîne de la vue demandée
      */
     @PostMapping("/rating/validate")
     public String validate(@Valid Rating rating, BindingResult bindingResult, Model model) {
@@ -66,11 +67,10 @@ public class RatingController {
     }
 
     /**
-     * This method allows access to the form for update an existing rating
-     *
-     * @param id    The identifier of the object to display
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * Cette méthode permet d'accéder au formulaire pour modifier un rating existant
+     * @param id    L'identifiant de l'objet à afficher
+     * @param model Un objet qui contient les données pour le rendu dans la vue
+     * @return Un chemin de chaîne de la vue demandée
      */
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
@@ -80,13 +80,12 @@ public class RatingController {
     }
 
     /**
-     * This method check the @Valid object and update it if there is no error
-     *
-     * @param id            The identifier of the object to check and update
-     * @param rating        Object that must be checked before being updated
-     * @param bindingResult Contains the result of the @Valid object validation, we can check if errors have occurred
-     * @param model         An object that contain the data for rendering into the view
-     * @return A string path of the requested view
+     * Cette méthode vérifie l'objet @Valid et le met à jour s'il n'y a pas d'erreur
+     * @param id            L'identifiant de l'objet à vérifier et à mettre à jour
+     * @param rating        Objet qui doit être vérifié avant d'être mis à jour
+     * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier si des erreurs sont survenues
+     * @param model         Un objet qui contient les données pour le rendu dans la vue
+     * @return Un chemin de chaîne de la vue demandée
      */
     @PostMapping("/rating/update/{id}")
     public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating, BindingResult bindingResult, Model model) {
@@ -98,12 +97,12 @@ public class RatingController {
         return "rating/update";
     }
 
+
     /**
-     * This method allows to delete an existing rating
-     *
-     * @param id    The identifier of the object to delete
-     * @param model An object that contain the data for rendering into the view
-     * @return A string path of the view to which the user is redirected
+     * Cette méthode permet de supprimer un rating existant
+     * @param id    L'identifiant de l'objet à supprimer
+     * @param model Un objet qui contient les données pour le rendu dans la vue
+     * @return Un chemin de chaîne de la vue demandée
      */
     @GetMapping("/rating/delete/{id}")
     public String deleteRating(@PathVariable("id") Integer id, Model model) {
