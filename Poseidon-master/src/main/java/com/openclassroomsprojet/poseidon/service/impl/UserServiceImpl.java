@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * This class contains methods that allow performing CRUD actions by calling the user repository
+ * Cette classe contient des méthodes permettant d'effectuer des opérations CRUD en appelant le référentiel d'utilisateurs.
  *
  * @author chamberlin dior
  * @version 1.0
@@ -22,9 +22,9 @@ public class UserServiceImpl implements IUserService {
     private UserRepository userRepository;
 
     /**
-     * Allows to search all the Users contained in the database
+     * Permet de rechercher tous les utilisateurs contenus dans la base de données.
      *
-     * @return A list of User
+     * @return Une liste d'utilisateurs.
      */
     @Override
     public List<User> findAllUsers() {
@@ -32,10 +32,10 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-     * Searches for a User object from its identifier
+     * Recherche un objet Utilisateur à partir de son identifiant.
      *
-     * @param id The identifier of the object to find
-     * @return An optional which may or may not contain the requested object
+     * @param id L'identifiant de l'objet à trouver.
+     * @return Un optionnel qui peut contenir ou non l'objet demandé.
      */
     @Override
     public Optional<User> findUserById(int id) {
@@ -43,9 +43,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-     * Delete a User
+     * Supprime un utilisateur.
      *
-     * @param id The identifier of the object to delete
+     * @param id L'identifiant de l'objet à supprimer.
      */
     @Override
     public void deleteUserById(int id) {
@@ -53,9 +53,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-     * Save a User
+     * Enregistre un utilisateur.
      *
-     * @param user Object to be saved
+     * @param user Objet à enregistrer.
      */
     @Override
     public void saveUser(User user) {

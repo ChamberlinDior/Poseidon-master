@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * This class contains methods that allow performing CRUD actions by calling the trade repository
+ * Cette classe contient des méthodes permettant d'effectuer des opérations CRUD en appelant le référentiel de transactions.
  *
  * @author chamberlin dior
  * @version 1.0
@@ -25,9 +25,9 @@ public class TradeServiceImpl implements ITradeService {
     private TradeRepository tradeRepository;
 
     /**
-     * Allows to search all the Trades contained in the database
+     * Permet de rechercher toutes les transactions contenues dans la base de données.
      *
-     * @return A list of Trade
+     * @return Une liste de transactions.
      */
     @Override
     public List<Trade> findAllTrade() {
@@ -36,10 +36,10 @@ public class TradeServiceImpl implements ITradeService {
     }
 
     /**
-     * Searches for a Trade object from its identifier
+     * Recherche un objet Transaction à partir de son identifiant.
      *
-     * @param id The identifier of the object to find
-     * @return An optional which may or may not contain the requested object
+     * @param id L'identifiant de l'objet à trouver.
+     * @return Un optionnel qui peut contenir ou non l'objet demandé.
      */
     @Override
     public Optional<Trade> findTradeById(int id) {
@@ -48,9 +48,9 @@ public class TradeServiceImpl implements ITradeService {
     }
 
     /**
-     * Delete a Trade
+     * Supprime une transaction.
      *
-     * @param id The identifier of the object to delete
+     * @param id L'identifiant de l'objet à supprimer.
      */
     @Override
     public void deleteTradeById(int id) {
@@ -59,11 +59,11 @@ public class TradeServiceImpl implements ITradeService {
     }
 
     /**
-     * Save a Trade
-     * The creationName and the creationDate are recorded only once, at the creation
-     * The revisionDate and the revisionName are updated each time the resource is updated
+     * Enregistre une transaction.
+     * La création du nom et de la date de création n'est enregistrée qu'une fois, lors de la création.
+     * La date et le nom de révision sont mis à jour chaque fois que la ressource est mise à jour.
      *
-     * @param trade Object to be saved
+     * @param transaction Objet à enregistrer.
      */
     @Override
     public void saveTrade(Trade trade) {
