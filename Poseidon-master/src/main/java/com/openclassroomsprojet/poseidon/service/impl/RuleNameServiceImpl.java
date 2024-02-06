@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * This class contains methods that allow performing CRUD actions by calling the ruleName repository
- *
+ * Cette classe contient des méthodes permettant d'effectuer des opérations CRUD en appelant
+ * le référentiel de noms de règles.
  * @author chamberlin dior
  * @version 1.0
  */
@@ -23,9 +23,9 @@ public class RuleNameServiceImpl implements IRuleNameService {
     private RuleNameRepository ruleNameRepository;
 
     /**
-     * Allows to search all the RuleNames contained in the database
+     * Permet de rechercher tous les noms de règles contenus dans la base de données.
      *
-     * @return A list of RuleName
+     * @return Une liste de noms de règles.
      */
     @Override
     public List<RuleName> findAllRuleName() {
@@ -34,10 +34,10 @@ public class RuleNameServiceImpl implements IRuleNameService {
     }
 
     /**
-     * Searches for a RuleName object from its identifier
+     * Recherche un objet NomRegle à partir de son identifiant.
      *
-     * @param id The identifier of the object to find
-     * @return An optional which may or may not contain the requested object
+     * @param id L'identifiant de l'objet à trouver.
+     * @return Un optionnel qui peut contenir ou non l'objet demandé.
      */
     @Override
     public Optional<RuleName> findRuleNameById(int id) {
@@ -46,9 +46,9 @@ public class RuleNameServiceImpl implements IRuleNameService {
     }
 
     /**
-     * Delete a RuleName
+     * Supprime un nom de règle.
      *
-     * @param id The identifier of the object to delete
+     * @param id L'identifiant de l'objet à supprimer.
      */
     @Override
     public void deleteRuleNameById(int id) {
@@ -57,9 +57,9 @@ public class RuleNameServiceImpl implements IRuleNameService {
     }
 
     /**
-     * Save a RuleName
+     * Enregistre un nom de règle.
      *
-     * @param ruleName Object to be saved
+     * @param nomRegle Objet à enregistrer.
      */
     @Override
     public void saveRuleName(RuleName ruleName) {
