@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * This class allows you to Monitors the requests made on the application controllers
+ * * Cette classe permet de surveiller les requêtes effectuées sur les contrôleurs de l'application.
  *
  * @author chamberlin dior
  * @version 1.0
@@ -22,13 +22,13 @@ import java.io.IOException;
 public class CustomRequestLoggingFilter extends GenericFilterBean {
 
     /**
-     * When a request is made, log the request then log the response
+     * Lorsqu'une requête est effectuée, enregistre la requête, puis enregistre la réponse.
      *
-     * @param servletRequest  Contain client request information
-     * @param servletResponse Contain request response
-     * @param chain           Invocation chain of a filtered request
-     * @throws IOException      Signals that an I/O exception
-     * @throws ServletException Signals a HTML servlet exception
+     * @param servletRequest  Contient les informations de la requête du client
+     * @param servletResponse Contient la réponse de la requête
+     * @param chain           Chaîne d'invocation d'une requête filtrée
+     * @throws IOException      Signale une exception d'entrée/sortie
+     * @throws ServletException Signale une exception de servlet HTML
      */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
