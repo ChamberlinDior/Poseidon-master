@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * This class contains methods that allow performing CRUD actions by calling the rating repository
+ * Cette classe contient des méthodes permettant d'effectuer des opérations CRUD en appelant le référentiel de notes.
  *
  * @author chamberlin dior
  * @version 1.0
@@ -21,11 +21,10 @@ public class RatingServiceImpl implements IRatingService {
 
     @Autowired
     private RatingRepository ratingRepository;
-
     /**
-     * Allows to search all the Ratings contained in the database
+     * Permet de rechercher toutes les notes contenues dans la base de données.
      *
-     * @return A list of Rating
+     * @return Une liste de notes.
      */
     @Override
     public List<Rating> findAllRating() {
@@ -34,10 +33,10 @@ public class RatingServiceImpl implements IRatingService {
     }
 
     /**
-     * Searches for a Rating object from its identifier
+     * Recherche un objet Note à partir de son identifiant.
      *
-     * @param id The identifier of the object to find
-     * @return An optional which may or may not contain the requested object
+     * @param id L'identifiant de l'objet à trouver.
+     * @return Un optionnel qui peut contenir ou non l'objet demandé.
      */
     @Override
     public Optional<Rating> findRatingById(int id) {
@@ -46,9 +45,9 @@ public class RatingServiceImpl implements IRatingService {
     }
 
     /**
-     * Delete a Rating
+     * Supprime une note.
      *
-     * @param id The identifier of the object to delete
+     * @param id L'identifiant de l'objet à supprimer.
      */
     @Override
     public void deleteRatingById(int id) {
@@ -57,9 +56,9 @@ public class RatingServiceImpl implements IRatingService {
     }
 
     /**
-     * Save a BidList
+     * Enregistre une note.
      *
-     * @param rating Object to be saved
+     * @param note Objet à enregistrer.
      */
     @Override
     public void saveRating(Rating rating) {
