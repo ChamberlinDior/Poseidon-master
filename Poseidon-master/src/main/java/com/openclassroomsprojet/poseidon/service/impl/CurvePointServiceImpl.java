@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * This class contains methods that allow performing CRUD actions by calling the curvePoint repository
+ * Cette classe contient des méthodes permettant d'effectuer des opérations CRUD en appelant le référentiel de points de courbe.
  *
  * @author chamberlin dior
  * @version 1.0
@@ -24,9 +24,9 @@ public class CurvePointServiceImpl implements ICurvePointService {
     private CurvePointRepository curvePointRepository;
 
     /**
-     * Allows to search all the CurvePoints contained in the database
+     * Permet de rechercher tous les points de courbe contenus dans la base de données.
      *
-     * @return A list of CurvePoint
+     * @return Une liste de points de courbe.
      */
     @Override
     public List<CurvePoint> findAllCurvePoint() {
@@ -35,10 +35,10 @@ public class CurvePointServiceImpl implements ICurvePointService {
     }
 
     /**
-     * Searches for a CurvePoint object from its identifier
+     * Recherche un objet PointCourbe à partir de son identifiant.
      *
-     * @param id The identifier of the object to find
-     * @return An optional which may or may not contain the requested object
+     * @param id L'identifiant de l'objet à trouver.
+     * @return Un optionnel qui peut contenir ou non l'objet demandé.
      */
     @Override
     public Optional<CurvePoint> findCurvePointById(int id) {
@@ -47,9 +47,9 @@ public class CurvePointServiceImpl implements ICurvePointService {
     }
 
     /**
-     * Delete a CurvePoint
+     * Supprime un point de courbe.
      *
-     * @param id The identifier of the object to delete
+     * @param id L'identifiant de l'objet à supprimer.
      */
     @Override
     public void deleteCurvePointById(int id) {
@@ -58,9 +58,9 @@ public class CurvePointServiceImpl implements ICurvePointService {
     }
 
     /**
-     * Save a CurvePoint
+     * Enregistre un point de courbe.
      *
-     * @param curvePoint Object to be saved
+     * @param pointCourbe Objet à enregistrer.
      */
     @Override
     public void saveCurvePoint(CurvePoint curvePoint) {
