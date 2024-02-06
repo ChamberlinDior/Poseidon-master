@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * This class contains methods that allow performing CRUD actions by calling the bidList repository
+ * Cette classe contient des méthodes permettant d'effectuer des opérations CRUD en appelant le référentiel de listes d'offres.
  *
  * @author chamberlin dior
  * @version 1.0
@@ -24,9 +24,9 @@ public class BidListServiceImpl implements IBidListService {
     private BidListRepository bidListRepository;
 
     /**
-     * Allows to search all the BidLists contained in the database
+     * Permet de rechercher toutes les listes d'offres contenues dans la base de données.
      *
-     * @return A list of BidList
+     * @return Une liste de listes d'offres.
      */
     @Override
     public List<BidList> findAllBidList() {
@@ -35,10 +35,10 @@ public class BidListServiceImpl implements IBidListService {
     }
 
     /**
-     * Searches for a BidList object from its identifier
+     * Recherche un objet ListeOffre à partir de son identifiant.
      *
-     * @param id The identifier of the object to find
-     * @return An optional which may or may not contain the requested object
+     * @param id L'identifiant de l'objet à trouver.
+     * @return Un optionnel qui peut contenir ou non l'objet demandé.
      */
     @Override
     public Optional<BidList> findBidListById(int id) {
@@ -47,9 +47,9 @@ public class BidListServiceImpl implements IBidListService {
     }
 
     /**
-     * Delete a BidList
+     * Supprime une liste d'offres.
      *
-     * @param id The identifier of the object to delete
+     * @param id L'identifiant de l'objet à supprimer.
      */
     @Override
     public void deleteBidListById(int id) {
@@ -58,11 +58,11 @@ public class BidListServiceImpl implements IBidListService {
     }
 
     /**
-     * Save a BidList
-     * The creationName and the creationDate are recorded only once, at the creation
-     * The revisionDate and the revisionName are updated each time the resource is updated
+     * Enregistre une liste d'offres.
+     * La création du nom et de la date de création n'est enregistrée qu'une fois, lors de la création.
+     * La date et le nom de révision sont mis à jour chaque fois que la ressource est mise à jour.
      *
-     * @param bidList Object to be saved
+     * @param listeOffre Objet à enregistrer.
      */
     @Override
     public void saveBidList(BidList bidList) {
