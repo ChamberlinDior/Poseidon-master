@@ -48,7 +48,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/login", "/error/**", "/css/**").permitAll() // Autoriser l'accès aux pages d'accueil, de connexion, d'erreur et aux fichiers CSS
 
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
-                .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/user/**").hasAuthority("USER")
 
 
                 .anyRequest() // Pour toute autre requête
