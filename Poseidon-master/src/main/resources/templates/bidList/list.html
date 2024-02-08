@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <title>Home</title>
@@ -9,10 +9,6 @@
 <body>
 <div class="container">
     <div class="row">
-        <a href="/bidList/add" class="btn btn-primary btn-sm">
-            <!-- Restreindre l'accès à ce bouton pour les utilisateurs ayant le rôle "ADMIN" -->
-            <div sec:authorize="hasAuthority('ADMIN')">Add New</div>
-        </a>
         <div class="col-6">
             <a href="/bidList/list">Bid List</a>&nbsp;|&nbsp;
             <a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;

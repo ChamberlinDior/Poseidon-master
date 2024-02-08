@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8"/>
 <title>Home</title>
@@ -9,7 +9,6 @@
 <body>
 <div class="container">
 	<div class="row">
-		<div sec:authorize="hasAuthority('ADMIN')">
 		<h2>Update Bid</h2>
 	</div>
 	<div class="row">
@@ -44,7 +43,6 @@
 			</div>
 		</form>
 	</div>
-</div>
 </div>
 </body>
 </html>
