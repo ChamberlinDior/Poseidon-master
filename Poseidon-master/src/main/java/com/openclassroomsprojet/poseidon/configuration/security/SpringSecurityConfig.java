@@ -51,6 +51,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAuthority("USER")
 
 
+
                 .anyRequest() // Pour toute autre requête
                 .authenticated() // Exiger l'authentification de l'utilisateur
                 .and() // Ajouter une autre configuration
