@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
@@ -40,11 +41,16 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override // Redéfinir la méthode de la classe parente
     protected void configure(final HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
+        ExceptionHandlingConfigurer<HttpSecurity> httpSecurityExceptionHandlingConfigurer = httpSecurity
                 .csrf() // Activer la protection contre les attaques CSRF
                 .disable() // Désactiver la protection CSRF
                 .authorizeRequests() // Configurer les autorisations des requêtes HTTP
                 .antMatchers("/", "/login", "/error/**", "/css/**").permitAll() // Autoriser l'accès aux pages d'accueil, de connexion, d'erreur et aux fichiers CSS
+
+                .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/user/**").hasRole("USER")
+
+
                 .anyRequest() // Pour toute autre requête
                 .authenticated() // Exiger l'authentification de l'utilisateur
                 .and() // Ajouter une autre configuration
@@ -53,7 +59,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin() // Utiliser le formulaire de connexion par défaut
                 .defaultSuccessUrl("/bidList/list") // Rediriger vers la liste des offres en cas de succès
                 .permitAll() // Autoriser l'accès au formulaire de connexion à tous
-                .and() // Ajouter une autre configuration
+                .and()
+
+
+                // Ajouter une autre configuration
                 .logout() // Configurer la déconnexion
                 .logoutUrl("/app-logout") // Définir l'URL de déconnexion
                 .invalidateHttpSession(true) // Invalider la session HTTP
@@ -62,7 +71,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and() // Ajouter une autre configuration
                 .rememberMe().key("uniqueAndSecret") // Activer la fonctionnalité "se souvenir de moi" avec une clé secrète
                 .and().exceptionHandling() // Gérer les exceptions
-                .accessDeniedPage("/app/error"); // Rediriger vers la page d'erreur en cas d'accès refusé
+                .accessDeniedPage("/app/error");// Rediriger vers la page d'erreur en cas d'accès refusé
+
     }
 
     @Bean // Indiquer que cette méthode renvoie un bean géré par Spring

@@ -58,24 +58,24 @@ public class UserController {
 
     /**
      * Cette méthode vérifie l'objet @Valid et le sauvegarde s'il n'y a pas d'erreur
-     * This method checks the @Valid object and saves it if there is no error
+
      *
      * @param user          Objet qui doit être validé avant d'être enregistré
-     *                      Object that must be validated before being saved
+
      * @param bindingResult Contient le résultat de la validation de l'objet @Valid, on peut vérifier s'il y a des erreurs
-     *                      Contains the result of the @Valid object validation, we can check if errors have occurred
+
      * @param model         Un objet contenant les données à rendre dans la vue
-     *                      An object that contains the data for rendering into the view
+
      * @return Un chemin de chaîne de la vue demandée
-     *         A string path of the requested view
+
      */
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult bindingResult, Model model) {
         // Vérifier s'il y a des erreurs de validation
-        // Check if there are any validation errors
+
         if (!bindingResult.hasErrors()) {
             // Sauvegarder l'utilisateur et mettre à jour la liste des utilisateurs dans le Model
-            // Save the user and update the list of users in the Model
+
             userService.saveUser(user);
             model.addAttribute("users", userService.findAllUsers());
             return "redirect:/user/list";

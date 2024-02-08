@@ -8,7 +8,6 @@ import javax.validation.ConstraintValidatorContext;
 import org.passay.*;
 /**
  * Cette classe valide les mots de passe candidats selon un ensemble de règles configurable. Utilise la bibliothèque Passay
- * (This class validate candidate passwords against a configurable rule set. Use Passay library)
  *
  * @author chamberlin dior
  * @version 1.0

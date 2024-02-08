@@ -17,7 +17,7 @@ public class MyUserDetailsService implements UserDetailsService {
     /**
      * Charge les détails de l'utilisateur en utilisant le nom d'utilisateur fourni.
      *
-     * @param nomUtilisateur Le nom d'utilisateur dont les détails doivent être chargés.
+     * @param username Le nom d'utilisateur dont les détails doivent être chargés.
      * @return Les détails de l'utilisateur encapsulés dans un objet UserDetails.
      * @throws UsernameNotFoundException Si aucun utilisateur n'est trouvé avec le nom d'utilisateur fourni.
      */
